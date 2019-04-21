@@ -34,6 +34,7 @@ public class SQLBase extends SQLiteOpenHelper {
     }
     public Cursor getAllCars(){
         String [] columns = {"id", "name", "model"};
-        SQLiteDatabase db = getReadableDatabase()
+        SQLiteDatabase db = getReadableDatabase();
+        return db.query("car", columns, null, null, null, null, null)
     }
 }
