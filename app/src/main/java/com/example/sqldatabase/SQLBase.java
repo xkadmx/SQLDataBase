@@ -19,14 +19,16 @@ public class SQLBase extends SQLiteOpenHelper {
 
     }
 
-    @Override/*runs when db conted is changed*/
+    @Override/*runs when db content is changed*/
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
     public void registerCar (String name, String model){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put();
+        values.put("name", name);
+        values.put("model", model);
+        db.insertOrThrow("car",null, values);
 
     }
 }
