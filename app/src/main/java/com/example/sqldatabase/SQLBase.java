@@ -26,6 +26,7 @@ public class SQLBase extends SQLiteOpenHelper {
     public void registerCar (String name, String model){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
+        values.put();
 
     }
 }
