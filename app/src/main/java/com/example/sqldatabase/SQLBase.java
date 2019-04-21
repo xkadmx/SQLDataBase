@@ -37,4 +37,7 @@ public class SQLBase extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         return db.query("car", columns, null, null, null, null, null)
     }
+    public void deleteAllCars(){
+
+    }
 }
