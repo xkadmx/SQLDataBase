@@ -2,6 +2,7 @@ package com.example.sqldatabase;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -30,5 +31,9 @@ public class SQLBase extends SQLiteOpenHelper {
         values.put("model", model);
         db.insertOrThrow("car",null, values);
 
+    }
+    public Cursor getAllCars(){
+        String [] columns = {"id", "name", "model"};
+        SQLiteDatabase db = getReadableDatabase()
     }
 }
