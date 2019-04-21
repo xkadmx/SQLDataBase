@@ -5,17 +5,22 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class SQLBase extends SQLiteOpenHelper {
-    public SQLBase(@androidx.annotation.Nullable Context context, @androidx.annotation.Nullable String name, @androidx.annotation.Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public SQLBase(@androidx.annotation.Nullable Context context) {
+        super(context, cars.db, null, 1);
     }
 
-    @Override
+    @Override /*runs when db is created*/
     public void onCreate(SQLiteDatabase db) {
+        db.execSQL("create table car(id integer primary key autoincrement,"
+                + "name text,"
+                + "model text);" +
+                "");
 
     }
 
-    @Override
+    @Override/*runs when db conted is changed*/
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
+    public void registerCar (String name, String model){}
 }
